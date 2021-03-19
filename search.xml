@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>Untitled</title>
+      <link href="/2021/03/19/Untitled/"/>
+      <url>/2021/03/19/Untitled/</url>
+      
+        <content type="html"><![CDATA[<h2 id="leetcode-1528重新排列字符串"><a class="markdownIt-Anchor" href="#leetcode-1528重新排列字符串"></a> <a href="https://leetcode-cn.com/problems/shuffle-string/" target="_blank" rel="noopener">LeetCode 1528.重新排列字符串</a></h2><p>时间复杂度O(n)</p><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">restoreString</span><span class="params">(String s, <span class="keyword">int</span>[] indices)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">char</span>[] chars = s.toCharArray();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; indices.length; i++) &#123;</span><br><span class="line">            chars[indices[i]] = s.charAt(i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> String(chars);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//runtime:1 ms</span></span><br><span class="line"><span class="comment">//memory:38.5 MB</span></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 数据结构与算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 算法 </tag>
+            
+            <tag> LeetCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>2021.03.19 打卡 01.03. URL化</title>
       <link href="/2021/03/19/2021-03-19-%E6%89%93%E5%8D%A1/"/>
       <url>/2021/03/19/2021-03-19-%E6%89%93%E5%8D%A1/</url>
