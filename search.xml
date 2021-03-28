@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>2021.03.38 打卡 LeetCode 16.26. 计算器</title>
+      <link href="/2021/03/28/2021-03-38-%E6%89%93%E5%8D%A1-LeetCode-16-26-%E8%AE%A1%E7%AE%97%E5%99%A8/"/>
+      <url>/2021/03/28/2021-03-38-%E6%89%93%E5%8D%A1-LeetCode-16-26-%E8%AE%A1%E7%AE%97%E5%99%A8/</url>
+      
+        <content type="html"><![CDATA[<p><a href="https://leetcode-cn.com/problems/calculator-lcci/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/calculator-lcci/</a></p><h2 id="leetcode-1626-计算器"><a class="markdownIt-Anchor" href="#leetcode-1626-计算器"></a> <a href="https://leetcode-cn.com/problems/calculator-lcci/" target="_blank" rel="noopener">LeetCode 16.26. 计算器</a></h2><p>时间复杂度 O(n)</p><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">calculate</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        Stack&lt;Integer&gt; nums = <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>, sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (i &lt; s.length()) &#123;</span><br><span class="line">            <span class="keyword">while</span> (i &lt; s.length() &amp;&amp; s.charAt(i) == <span class="string">' '</span>) &#123;</span><br><span class="line">                i++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (i &gt;= s.length()) <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">char</span> c = s.charAt(i);</span><br><span class="line">            <span class="keyword">if</span> (c == <span class="string">'*'</span> || c == <span class="string">'/'</span> || c == <span class="string">'+'</span> || c == <span class="string">'-'</span>) &#123;</span><br><span class="line">                i++;</span><br><span class="line">                <span class="keyword">while</span> (s.charAt(i) == <span class="string">' '</span>) i++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">int</span> num = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">if</span> (Character.isDigit(s.charAt(i))) &#123;</span><br><span class="line">                <span class="keyword">while</span> (i &lt; s.length() &amp;&amp; Character.isDigit(s.charAt(i))) &#123;</span><br><span class="line">                    num = num * <span class="number">10</span> + s.charAt(i) - <span class="string">'0'</span>;</span><br><span class="line">                    i++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">switch</span> (c) &#123;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">'-'</span>:</span><br><span class="line">                    num = -num;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">'*'</span>:</span><br><span class="line">                    num = nums.pop() * num;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">'/'</span>:</span><br><span class="line">                    num = nums.pop() / num;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            nums.push(num);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (!nums.isEmpty()) &#123;</span><br><span class="line">            sum += nums.pop();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 数据结构与算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 算法 </tag>
+            
+            <tag> LeetCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>2021.03.23 打卡 LeetCode 2.两数相加</title>
       <link href="/2021/03/23/2021-03-23-%E6%89%93%E5%8D%A1-LeetCode-2-%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0/"/>
       <url>/2021/03/23/2021-03-23-%E6%89%93%E5%8D%A1-LeetCode-2-%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0/</url>
