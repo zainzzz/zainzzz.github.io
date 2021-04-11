@@ -4,6 +4,60 @@
   
     
     <entry>
+      <title>2021.04.11 打卡 148. 排序链表</title>
+      <link href="/2021/04/11/2021-04-11-%E6%89%93%E5%8D%A1-148-%E6%8E%92%E5%BA%8F%E9%93%BE%E8%A1%A8/"/>
+      <url>/2021/04/11/2021-04-11-%E6%89%93%E5%8D%A1-148-%E6%8E%92%E5%BA%8F%E9%93%BE%E8%A1%A8/</url>
+      
+        <content type="html"><![CDATA[<h2 id="面试题-0806-汉诺塔问题"><a class="markdownIt-Anchor" href="#面试题-0806-汉诺塔问题"></a> <a href="https://leetcode-cn.com/problems/sort-list/" target="_blank" rel="noopener">面试题 08.06. 汉诺塔问题</a></h2><ul><li>时间复杂度O(nlogn)</li><li>归并排序</li></ul><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">sortList</span><span class="params">(ListNode head)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> sortList(head, <span class="keyword">null</span>);</span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">// 左右分别排序，然后合并</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">sortList</span><span class="params">(ListNode head, ListNode tail)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (head == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> head;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (head.next == tail) &#123;</span><br><span class="line">            head.next = <span class="keyword">null</span>;</span><br><span class="line">            <span class="keyword">return</span> head;</span><br><span class="line">        &#125;</span><br><span class="line">        ListNode mid = head, fast = head;</span><br><span class="line">        <span class="keyword">while</span> (fast != tail) &#123;</span><br><span class="line">            mid = mid.next;</span><br><span class="line">            fast = fast.next;</span><br><span class="line">            <span class="keyword">if</span> (fast != tail) &#123;</span><br><span class="line">                fast = fast.next;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        ListNode left = sortList(head, mid);</span><br><span class="line">        ListNode right = sortList(mid, tail);</span><br><span class="line">        ListNode sorted = merge(left, right);</span><br><span class="line">        <span class="keyword">return</span> sorted;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 合并排序</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">merge</span><span class="params">(ListNode left, ListNode right)</span> </span>&#123;</span><br><span class="line">        ListNode head = <span class="keyword">new</span> ListNode(<span class="number">0</span>);</span><br><span class="line">        ListNode temp = head, leftTemp = left, rightTemp = right;</span><br><span class="line">        <span class="keyword">while</span> (leftTemp != <span class="keyword">null</span> &amp;&amp; rightTemp != <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (leftTemp.val &lt;= rightTemp.val) &#123;</span><br><span class="line">                temp.next = leftTemp;</span><br><span class="line">                leftTemp = leftTemp.next;</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                temp.next = rightTemp;</span><br><span class="line">                rightTemp = rightTemp.next;</span><br><span class="line">            &#125;</span><br><span class="line">            temp = temp.next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (leftTemp != <span class="keyword">null</span>) &#123;</span><br><span class="line">            temp.next = leftTemp;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (rightTemp != <span class="keyword">null</span>) &#123;</span><br><span class="line">            temp.next = rightTemp;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> head.next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 数据结构与算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 算法 </tag>
+            
+            <tag> LeetCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>2021.04.11 打卡 面试题 08.06. 汉诺塔问题</title>
+      <link href="/2021/04/11/2021-04-11-%E6%89%93%E5%8D%A1-%E9%9D%A2%E8%AF%95%E9%A2%98-08-06-%E6%B1%89%E8%AF%BA%E5%A1%94%E9%97%AE%E9%A2%98/"/>
+      <url>/2021/04/11/2021-04-11-%E6%89%93%E5%8D%A1-%E9%9D%A2%E8%AF%95%E9%A2%98-08-06-%E6%B1%89%E8%AF%BA%E5%A1%94%E9%97%AE%E9%A2%98/</url>
+      
+        <content type="html"><![CDATA[<h2 id="面试题-0806-汉诺塔问题"><a class="markdownIt-Anchor" href="#面试题-0806-汉诺塔问题"></a> <a href="https://leetcode-cn.com/problems/hanota-lcci/" target="_blank" rel="noopener">面试题 08.06. 汉诺塔问题</a></h2><ul><li>递归</li></ul><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">hanota</span><span class="params">(List&lt;Integer&gt; A, List&lt;Integer&gt; B, List&lt;Integer&gt; C)</span> </span>&#123;</span><br><span class="line">        move(A.size(), A, B, C);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">move</span><span class="params">(<span class="keyword">int</span> size, List&lt;Integer&gt; a, List&lt;Integer&gt; b, List&lt;Integer&gt; c)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (size == <span class="number">1</span>) &#123;</span><br><span class="line">            c.add(a.remove(a.size() - <span class="number">1</span>));</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        move(size - <span class="number">1</span>, a, c, b);</span><br><span class="line">        c.add(a.remove(a.size() - <span class="number">1</span>));</span><br><span class="line">        move(size - <span class="number">1</span> , b, a, c);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 数据结构与算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 算法 </tag>
+            
+            <tag> LeetCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>2021.03.31 打卡 剑指 Offer 59 - I. 滑动窗口的最大值</title>
       <link href="/2021/03/31/2021-03-31-%E6%89%93%E5%8D%A1-%E5%89%91%E6%8C%87-Offer-59-II-%E6%BB%91%E5%8A%A8%E7%9A%84%E6%9C%80%E5%A4%A7%E5%80%BC/"/>
       <url>/2021/03/31/2021-03-31-%E6%89%93%E5%8D%A1-%E5%89%91%E6%8C%87-Offer-59-II-%E6%BB%91%E5%8A%A8%E7%9A%84%E6%9C%80%E5%A4%A7%E5%80%BC/</url>
